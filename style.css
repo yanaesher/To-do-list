@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea {
+  font-family: Poppins, sans-serif;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #2a0032, #003);
+}
+
+.container {
+  padding: 0 0.9375rem;
+  margin: 0 auto;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 34.375rem;
+  margin: 6.25rem auto 1.25rem;
+  background: #fff;
+  border-radius: 0.625rem;
+  padding: 2.5rem 1.25rem;
+}
+
+.todo-app__title {
+  font-size: 1.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.todo-app__title img {
+  margin-left: 0.625rem;
+  width: 1.875em;
+  height: 1.875em;
+}
+
+.todo-app__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #edeef0;
+  border-radius: 1.875rem;
+  padding-left: 1.25rem;
+  margin-bottom: 1.875rem;
+}
+
+.todo-app #todo-app-input-box {
+  flex: 1;
+  background: 0 0;
+  padding: 0.625rem;
+}
+
+.todo-app #todo-app-input-box:focus {
+  outline: 0;
+  border: none;
+}
+
+.todo-app__list-container-item {
+  position: relative;
+  padding: 0.625rem 0.5rem 0.625rem 2.5rem;
+  margin-bottom: 0.9375rem;
+}
+
+.no-webp .todo-app__list-container-item::before {
+  background-image: url(../img/unchecked.png);
+}
+
+.todo-app__list-container-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  background-size: cover;
+  background-position: center;
+  width: 1.75em;
+  height: 1.75em;
+}
+
+.todo-app__list-container-item.checked {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.no-webp .todo-app__list-container-item.checked::before {
+  background-image: url(../img/checked.png);
+}
+
+.todo-app__list-container-item.checked::before {
+  left: 0;
+  top: 0.25rem;
+}
+
+.todo-app__button {
+  color: #fff;
+  background-color: red;
+  border-radius: 1.875rem;
+  padding: 1.25rem 3.25rem;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.wrapper > main {
+  flex: 1 1 auto;
+}
+
+.checked {
+  text-decoration: line-through;
+  position: relative;
+}
+
+.no-webp .checked::before {
+  background-image: url(../img/checked.png);
+}
+
+.checked::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-size: cover;
+}
+
+.webp .todo-app__list-container-item::before {
+  background-image: url(../img/unchecked.webp);
+}
+
+.webp .todo-app__list-container-item.checked::before {
+  background-image: url(../img/checked.webp);
+}
+
+.webp .checked::before {
+  background-image: url(../img/checked.webp);
+}
