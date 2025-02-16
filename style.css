@@ -4,16 +4,10 @@
   padding: 0;
   margin: 0;
   border: 0;
-}
-
-*,
-*:after,
-*:before {
   box-sizing: border-box;
 }
 
-body,
-html {
+body, html {
   height: 100%;
   min-width: 320px;
 }
@@ -30,9 +24,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-button,
-input,
-textarea {
+button, input, textarea {
   font-family: Poppins, sans-serif;
   font-size: inherit;
 }
@@ -45,14 +37,6 @@ button {
 
 a {
   color: inherit;
-}
-
-a:link,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
   text-decoration: none;
 }
 
@@ -64,12 +48,7 @@ img {
   vertical-align: top;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
   font-size: inherit;
 }
@@ -77,7 +56,7 @@ h6 {
 main {
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(to right, #2a0032, #003);
+  background: linear-gradient(to right, #2a0032, #000033);
 }
 
 .container {
@@ -120,12 +99,12 @@ main {
 
 .todo-app #todo-app-input-box {
   flex: 1;
-  background: 0 0;
+  background: transparent;
   padding: 0.625rem;
 }
 
 .todo-app #todo-app-input-box:focus {
-  outline: 0;
+  outline: none;
   border: none;
 }
 
@@ -135,12 +114,30 @@ main {
   margin-bottom: 0.9375rem;
 }
 
+.todo-app__list-container-item span {
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 50%;
+  font-size: 1.25rem;
+  text-align: center;
+  transform: translateY(-50%);
+  width: 1.875rem;
+  height: 1.875rem;
+  line-height: 1.875rem;
+}
+
+.todo-app__list-container-item span:hover {
+  background-color: #edeef0;
+  border-radius: 50%;
+}
+
 .no-webp .todo-app__list-container-item::before {
   background-image: url(../img/unchecked.png);
 }
 
 .todo-app__list-container-item::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0.25rem;
@@ -192,7 +189,7 @@ main {
 }
 
 .checked::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -201,6 +198,38 @@ main {
   background-size: cover;
 }
 
+/* Адаптивность */
+@media (max-width: 61.99875em) {
+  .todo-app {
+    max-width: 28.125rem;
+    padding: 1.875rem 0.9375rem;
+  }
+}
+
+@media (max-width: 47.99875em) {
+  .todo-app {
+    max-width: 21.875rem;
+    padding: 1.25rem 0.625rem;
+  }
+
+  .todo-app__title {
+    font-size: 1.5rem;
+  }
+
+  .todo-app__row {
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 0.625rem;
+  }
+
+  .todo-app__button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* WebP изображения */
 .webp .todo-app__list-container-item::before {
   background-image: url(../img/unchecked.webp);
 }
